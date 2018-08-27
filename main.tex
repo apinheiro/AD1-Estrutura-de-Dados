@@ -1,0 +1,59 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[portuguese,linesnumbered,ruled, vlined]{algorithm2e}
+\usepackage{amsmath}
+
+
+\title{AD1 Estrutura de Dados - 2018.2}
+\author{André Luiz Rodrigues Pinheiro - 18113050170}
+
+\begin{document}
+
+\maketitle
+
+\section*{Respostas:}
+
+\subsection*{Questão 3:}
+
+\begin{algorithm}
+\caption{Agrupar\_Elementos(V)}
+\Entrada{Um vetor contendo n elementos}
+i := 0\\
+\Para{i $\leq$ n}{
+ j := V[i] / 3 \textit{\% j inteiro} \\
+ S[j] := S[j] + 1 \\
+ i := i+ 1}
+ \Para{k \Ate n}{
+   \textbf{imprima} S[i],"elementos numa faixa de ",(3*i)+1,"até",3*(i+1)
+ }
+\endpara
+\end{algorithm}
+
+Este algoritmo possui complexidade O(n).
+
+\subsection*{Questão 8:}
+
+\begin{center}
+\begin{tabular}{cccccccccc}
+  10 & 9 & 8 & 7 & 6 & 5 & 4 & 3& 2 & 1* \\
+  1 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3& 2*  \\
+  1 & 2 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3*  \\
+  1 & 2 & 3 & 10 & 9 & 8 & 7 & 6 & 5 & 4* \\
+  1 & 2 & 3 & 4 & 10 & 9 & 8 & 7 & 6 & 5* \\
+  1 & 2 & 3 & 4 & 5 & 10 & 9 & 8 & 7 & 6* \\
+  1 & 2 & 3 & 4 & 5 & 6 & 10 & 9 & 8 & 7* \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 10 & 9 & 8* \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 10 & 9* \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10* \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10
+\end{tabular}
+\end{center}
+Na primeira linha há 9 comparações, na segunda são 8 e assim por diante. O total de comparações é de:
+
+\[ \sum_{i=1}^9 n = 1 + 2 + \cdots + n = n\frac{n+1}{2}\]
+
+O$\left(\dfrac{n(n+1)}{2}\right)$ = O($n^2$). O total de comparações é de $\dfrac{9(10)}{2} = \dfrac{90}{2} = 45$ comparações.
+
+\subsection*{Questão 9:}
+\end{document}
